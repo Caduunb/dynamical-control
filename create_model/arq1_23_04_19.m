@@ -1,3 +1,7 @@
+% author: Caio E. Coelho de Oliveira, Mechatronics Engineering Undergraduate, University of Brasília.
+% This code creates a process via a script, calculates the feedback transfer function and 
+% opens the siso tool to evaluate a PID compensator applied to it.
+
 clear all
 close all
 
