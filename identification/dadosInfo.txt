@@ -1,0 +1,14 @@
+% Info on dadosQ and dadosT
+
+dadosQ:
+1. Time (0.002s step);
+2. System output (omega);
+3. ?
+4. Actuator output;
+5. System input (amp 6Vpp, 50% duty cycle, 0.5Hz).
+
+dadosT:
+1. Time (0.002s step);
+2. System output (omega);
+3. Actuator output;
+4. System input.
