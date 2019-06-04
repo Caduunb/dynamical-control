@@ -12,8 +12,8 @@ function data_load = plotDadosQT(file)
         load (file);
         disp ('Dados da entrada quadrada');
         figure; hold on;
-        plot(dados(1, 1:end), dados(5, 1:end),'r', 'LineWidth', 2); % entrada sistema
-        plot(dados(1, 1:end), dados(4, 1:end),'g', 'LineWidth', 2); % saída atuador
+        plot(dados(1, 1:end), dados(4, 1:end),'r', 'LineWidth', 2); % entrada sistema
+        plot(dados(1, 1:end), dados(3, 1:end),'g', 'LineWidth', 2); % saída atuador
         plot(dados(1, 1:end), dados(2, 1:end),'b');                 % saída sistema
     elseif (strcmp(file, 'dadosT.mat') || strcmp(file, 'dadosT'))
         load (file);
