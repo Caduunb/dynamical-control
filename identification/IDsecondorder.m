@@ -48,7 +48,7 @@ title('Dead Zone Output (zoom in)')
 ylabel('Dead Zone Output (V)')
 xlabel('time (s)')
 %% Calculate theta(1:3)
-A = [output(2:length(output) - 1), output(1:length(output)-2), input(1:(length(input)-2))];
+A = [output(2:length(output) - 1), output(1:length(output)-2), ddzone(1:(length(ddzone)-2))];
 Y = output(3:length(output));
 
 theta = inv(A'*A)*A'*Y;
