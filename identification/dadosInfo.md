@@ -66,4 +66,16 @@ Obs.: O algoritmo de identificação está errado. Zona morta obtida analiticamente
 delta = [0.968, -0.75];
 
 ## Second Order:
-    
+
+system =      c
+        -------------
+        s^2 + s*a + b
+
+theta = 
+    2 - aT
+    aT - bT^2 -1
+    cT^2
+
+a = 740.1713;
+b = -366261.5988;
+c = 47547.2006
