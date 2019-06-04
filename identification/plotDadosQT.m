@@ -1,6 +1,7 @@
 % Aula 28 de Maio de 2019
 % author: Caio E C Oliveira
 % date:   June 2, 2019.
+
 function data_load = plotDadosQT(file)
     if (strcmp(file, 'Q') || strcmp(file, 'q'))
         file = 'dadosQ';
