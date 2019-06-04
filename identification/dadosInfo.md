@@ -10,6 +10,10 @@
 
 ## First Order:
 
+system =    b
+         -------
+          s + a
+
 theta =    
         (1 - a*time_step)
         b
@@ -21,6 +25,22 @@ theta =
     
 a = (1-theta(1))/time_step = 9.4
 b = 0.02
+
+## Second order
+
+system =      c
+        -------------
+        s^2 + s*a + b
+
+theta = 
+    2 - aT
+    aT - bT^2 -1
+    cT^2
+
+a = 680.3854;
+b = -332535.3506;
+c = 123639.896
+
 
 # dadosT:
 
