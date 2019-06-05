@@ -5,29 +5,32 @@
 function data_load = plotDadosQT(file)
     if (strcmp(file, 'Q') || strcmp(file, 'q'))
         file = 'dadosQ';
+        disp ('Dados da entrada quadrada');
     elseif(strcmp(file, 'T') || strcmp(file, 't'))
         file = 'dadosT';
-    end
-    if(strcmp(file, 'dadosQ.mat') || strcmp(file, 'dadosQ'))
-        load (file);
-        disp ('Dados da entrada quadrada');
-        figure; hold on;
-        plot(dados(1, 1:end), dados(4, 1:end),'r', 'LineWidth', 2); % entrada sistema
-        plot(dados(1, 1:end), dados(3, 1:end),'g', 'LineWidth', 2); % saída atuador
-        plot(dados(1, 1:end), dados(2, 1:end),'b');                 % saída sistema
-    elseif (strcmp(file, 'dadosT.mat') || strcmp(file, 'dadosT'))
-        load (file);
         disp ('Dados da entrada triangular');
-        figure; hold on;
-        plot(dados(1, 1:end), dados(4, 1:end),'r', 'LineWidth', 2); % entrada sistema
-        plot(dados(1, 1:end), dados(3, 1:end),'g', 'LineWidth', 2); % saída atuador
-        plot(dados(1, 1:end), dados(2, 1:end),'b');                 % saída sistema
-    else
-        error('Dados não encontrados ou diferentes do esperado. Encerrando script.')
     end
-    
-    legend('Entrada do sistema', 'Saída do Atuador', 'Saída do sistema')
+    load(file);
+    % Graficos
+    figure(1); hold on;
+    plot(dados(1, :), dados(4, :),'r', 'LineWidth', 2); % entrada sistema
+    plot(dados(1, :), dados(3, :),'g', 'LineWidth', 2); % saída atuador
+    title('');
     xlabel('Tempo (s)');
     ylabel('Voltagem (V)');
+    
+    figure(2);
+    plot(dados(1, :), dados(2, :),'k', 'LineWidth', 2); % saída sistema
+    title('Saída do sistema');
+    xlabel('Tempo (s)');
+    ylabel('Voltagem (V)');
+    
+    % Legendas
+    figure(1);
+    legend('Entrada do sistema', 'Saída do Atuador');
+    
+    figure(2); 
+    legend('Saída do sistema')
+    
     data_load = dados;
 end

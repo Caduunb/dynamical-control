@@ -7,22 +7,18 @@
 
 clear all; close all; clc;
 
-file = 'q';
+file = 't';
 dados = plotDadosQT(file);
 
 datasize = length(dados);
-timeStep= dados(1,2) - dados(1,1);             % discrete time step
-disp(['Data size: ', num2str(size(dados)), ';', ' Time Step: ', num2str(timeStep), ';']);
-%% Matrices definition
+T= dados(1,2) - dados(1,1);             % discrete time step
+disp(['Data size: ', num2str(size(dados)), ';', ' Time Step: ', num2str(T), ';']);
+
+% Matrices definition
 delta = [0.968, -0.75];      % dead zone threshold
-if (strcmp(file, 'q'))
-    output = (dados(2, 1:end))';    % system output 
-    input =  (dados(4, 1:end))';    % actuator output
-elseif(strcmp(file, 't'))
-    output = (dados(2, 1:end))';    % system output 
-    input =  (dados(3, 1:end))';    % actuator output
-end
-%%
+input =  (dados(3, :))';    % actuator output
+output = (dados(2, :))';    % system output 
+
 % Dead zone output estimation.
 ddzone = zeros(length(input), 1);
 i=1;
@@ -47,14 +43,24 @@ plot(dados(1, 1:int16(length(dados)/8)), ddzone(1:int16(length(ddzone)/8)), 'g',
 title('Dead Zone Output (zoom in)')
 ylabel('Dead Zone Output (V)')
 xlabel('time (s)')
-%% Calculate theta(1:3)
+
+% Calculate theta(1:3)
 A = [output(2:length(output) - 1), output(1:length(output)-2), ddzone(1:(length(ddzone)-2))];
 Y = output(3:length(output));
 
 theta = inv(A'*A)*A'*Y;
-%%
-a = (2 - theta(1))/timeStep;
-b = a - ((1 + theta(2))/timeStep^2);
-c = theta(3)/timeStep^2;
+
+a = (2 - theta(1))/T;
+b = a - ((1 + theta(2))/T^2);
+c = theta(3)/T^2;
 
 disp(['a = ', num2str(a), ';', 'b = ', num2str(b), ';', 'c = ', num2str(c)])
+
+%% Simulation
+time  = dados(1, :);
+g = tf([c], [1 a b]);
+
+sys2order = lsim (g, input, time);
+plot(time, output, 'k', time, sys2order, 'g', 'LineWidth', 2);
+legend('Saida Medida', 'Resposta Simulada');
+disp('Simulação equivocada.')

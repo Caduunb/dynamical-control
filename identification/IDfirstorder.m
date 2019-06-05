@@ -5,7 +5,7 @@
 
 clear all; close all; clc;
 
-file = 'q';
+file = 't';
 if (strcmp(file, 'Q') || strcmp(file, 'q'))
     file = 'dadosQ';
 elseif(strcmp(file, 'T') || strcmp(file, 't'))
@@ -45,6 +45,7 @@ b = theta(2)/time_step;
 disp ('System type: b/(s + a)');
 disp (['a value: ', num2str(a), ';', ' b value: ', num2str(b), ';']);
 
+% simulacao do sistema
 sys = tf([b],[1 a]);
 ye = lsim(sys,dados(4, :), dados(1, :));
 figure;

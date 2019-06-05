@@ -1,32 +1,33 @@
 % Info on dadosQ and dadosT
+% date: June 4, 2019.
+% Dynamical Control Lab
+% author: Caio Oliveira
 
-# dadosQ:
+# dadosQ: OK
 
     1. Time (0.002s step);
     2. System output (omega);
-    3. ?
-    4. Actuator output;
-    5. System input (amp 6Vpp, 50% duty cycle, 0.5Hz).
+    3. Actuator output;
+    4. System input (amp 10Vpp, 50% duty cycle, 0.5Hz).
 
-## First Order:
+## First Order Q: OK
 
 system =    b
          -------
           s + a
 
 theta =    
-        (1 - a*time_step)
-        b
+        (1 - a*T)
+        bT
 
 theta = 
 
-    0.9812
-    0.0199
     
-a = (1-theta(1))/time_step = 9.4
-b = 0.02
+    
+a = 20
+b = 20
 
-## Second order
+## Second order Q: NOT OK
 
 system =      c
         -------------
@@ -41,26 +42,25 @@ a = 679.6393;
 b = -332,163.1665;
 c = 123,582.3429
 
-
-
-# dadosT:
+---------------------------------------------------
+# dadosT: OK
 
 1. Time (0.002s step);
 2. System output (omega);
 3. Actuator output;
 4. System input.
 
-## First Order:
+## First Order T: OK
 
 theta =
 
     0.9600
     0.0400
 
-a = (1-theta(1))/time_step = 20
-b = 0.04
+a = (1-theta(1))/T = 20
+b = 
 
-## Dead Zone:
+## Dead Zone: OK
 
 Obs.: O algoritmo de identificação está errado. Zona morta obtida analiticamente, observando-se os gráficos.
     
@@ -80,4 +80,3 @@ theta =
 a = 741.7348;
 b = -365986.1259;
 c = 64876.979
-
