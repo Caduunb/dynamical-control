@@ -5,7 +5,9 @@
 % date:   June 2, 2019.
 % Perform a system identification.
 
-clearvars; close all; clc;
+%clearvars;
+close all;
+clc;
 
 file = 'q';
 dados = plotDadosQT(file); close all;
@@ -71,4 +73,3 @@ sys2order = lsim (g, ddzone, time);
 figure;
 plot(time, output, 'k', time, sys2order, 'g', 'LineWidth', 2);
 legend('Saida Medida', 'Resposta Simulada');
-disp('Simulação equivocada.')

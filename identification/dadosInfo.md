@@ -27,7 +27,7 @@ theta =
 a = 20
 b = 20
 
-## Second order Q: NOT OK
+## Second order Q: OK
 
 system =      c
         -------------
@@ -38,9 +38,9 @@ theta =
     aT - bT^2 -1
     cT^2
 
-a = 679.6393;
-b = -332,163.1665;
-c = 123,582.3429
+a = 652.7447;
+b = 7555.5563;
+c = 181707.3116
 
 ---------------------------------------------------
 # dadosT: OK
@@ -66,7 +66,7 @@ Obs.: O algoritmo de identificação está errado. Zona morta obtida analiticamente
     
 delta = [0.968, -0.75];
 
-## Second Order:
+## Second Order T: NOT OK
 
 system =      c
         -------------
