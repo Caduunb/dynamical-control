@@ -5,62 +5,70 @@
 % date:   June 2, 2019.
 % Perform a system identification.
 
-clear all; close all; clc;
+clearvars; close all; clc;
 
-file = 't';
-dados = plotDadosQT(file);
+file = 'q';
+dados = plotDadosQT(file); close all;
 
 datasize = length(dados);
 T= dados(1,2) - dados(1,1);             % discrete time step
 disp(['Data size: ', num2str(size(dados)), ';', ' Time Step: ', num2str(T), ';']);
 
 % Matrices definition
-delta = [0.968, -0.75];      % dead zone threshold
-input =  (dados(3, :))';    % actuator output
-output = (dados(2, :))';    % system output 
+startpoint = 500;                        % Ignoring noisy initial signal
+delta = [0.968, -0.75];                  % dead zone threshold
+input =  (dados(3, startpoint:end))';    % actuator output
+output = (dados(2, startpoint:end))';    % system output 
 
 % Dead zone output estimation.
 ddzone = zeros(length(input), 1);
 i=1;
 while i <= length(input)
-    if ((input(i) > 0 && input(i) < delta(1)))
-        ddzone(i) = 0;
-    elseif ((input(i) >= delta(2)) && (input(i) < 0))
-        ddzone(i) = 0;
-    else
-        ddzone(i) = input(i);
+    if ((input(i) < delta(2)))
+        ddzone(i) = input(i) - delta(2);
+    elseif((input(i) > delta(1)))
+        ddzone(i) = input(i) - delta(1);
     end
     i=i+1;
 end
+
 figure; hold on;
 subplot(1, 2, 1);
-plot(dados(1, int16(1:length(dados)/4)), input(int16(1:length(dados)/4)), 'k', 'LineWidth', 2);
-title('Dead Zone Input (zoom in)')
-ylabel('Dead Zone Input (V)')
-xlabel('time (s)')
+zoom = startpoint:int16(length(dados)/4);
+plot(dados(1, zoom), input(zoom), 'k', 'LineWidth', 2);
+title('Dead Zone Input (zoom in)');
+ylabel('Dead Zone Input (V)');
+xlabel('time (s)');
+
 subplot(1,2,2);
-plot(dados(1, 1:int16(length(dados)/8)), ddzone(1:int16(length(ddzone)/8)), 'g', 'LineWidth', 2);
-title('Dead Zone Output (zoom in)')
-ylabel('Dead Zone Output (V)')
-xlabel('time (s)')
+zoom = startpoint:int16(length(dados)/8);
+plot(dados(1, zoom), ddzone(zoom), 'g', 'LineWidth', 2);
+title('Dead Zone Output (zoom in)');
+ylabel('Dead Zone Output (V)');
+xlabel('time (s)');
+
+clear zoom i;
 
 % Calculate theta(1:3)
-A = [output(2:length(output) - 1), output(1:length(output)-2), ddzone(1:(length(ddzone)-2))];
+A = [output(2:length(output) - 1), output(1:length(output)-2)];
+A = [A, ddzone(1:(length(ddzone)-2))];
 Y = output(3:length(output));
 
 theta = inv(A'*A)*A'*Y;
 
 a = (2 - theta(1))/T;
-b = a - ((1 + theta(2))/T^2);
+b = (a*T - 1 - theta(2)) / T^2;
 c = theta(3)/T^2;
 
+disp ('System type: c/(s^2 + s*a + b)');
 disp(['a = ', num2str(a), ';', 'b = ', num2str(b), ';', 'c = ', num2str(c)])
-
+close all;
 %% Simulation
-time  = dados(1, :);
+time  = dados(1, 1:length(ddzone));
 g = tf([c], [1 a b]);
+sys2order = lsim (g, ddzone, time);
 
-sys2order = lsim (g, input, time);
+figure;
 plot(time, output, 'k', time, sys2order, 'g', 'LineWidth', 2);
 legend('Saida Medida', 'Resposta Simulada');
 disp('Simulação equivocada.')

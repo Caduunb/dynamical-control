@@ -5,13 +5,13 @@
 
 clear all; close all; clc;
 
-file = 't';
+file = 'q';
 if (strcmp(file, 'Q') || strcmp(file, 'q'))
     file = 'dadosQ';
 elseif(strcmp(file, 'T') || strcmp(file, 't'))
     file = 'dadosT';
 end
-dados = plotDadosQT(file); close all;
+dados = plotDadosQT(file);
 
 datasize = length(dados);
 time_step= dados(1,2) - dados(1,1);             % discrete time step

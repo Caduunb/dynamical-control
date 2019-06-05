@@ -15,22 +15,17 @@ function data_load = plotDadosQT(file)
     figure(1); hold on;
     plot(dados(1, :), dados(4, :),'r', 'LineWidth', 2); % entrada sistema
     plot(dados(1, :), dados(3, :),'g', 'LineWidth', 2); % saída atuador
-    title('');
+    title('Entrada do sistema e Saída do Atuador');
     xlabel('Tempo (s)');
     ylabel('Voltagem (V)');
-    
+    legend('Entrada do sistema', 'Saída do Atuador');
+
     figure(2);
     plot(dados(1, :), dados(2, :),'k', 'LineWidth', 2); % saída sistema
     title('Saída do sistema');
     xlabel('Tempo (s)');
     ylabel('Voltagem (V)');
-    
-    % Legendas
-    figure(1);
-    legend('Entrada do sistema', 'Saída do Atuador');
-    
-    figure(2); 
-    legend('Saída do sistema')
+    legend('Saída do sistema');
     
     data_load = dados;
 end
