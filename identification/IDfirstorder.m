@@ -3,7 +3,7 @@
 % date:   June 2, 2019.
 % Uses the function plotDadosQT.m for showing plots of data and also for loading it into the script.  
 
-clear all; close all; clc;
+clearvars; close all; clc;
 
 file = 'q';
 if (strcmp(file, 'Q') || strcmp(file, 'q'))
@@ -11,7 +11,7 @@ if (strcmp(file, 'Q') || strcmp(file, 'q'))
 elseif(strcmp(file, 'T') || strcmp(file, 't'))
     file = 'dadosT';
 end
-dados = plotDadosQT(file);
+dados = plotDadosQT(file); close all;
 
 datasize = length(dados);
 time_step= dados(1,2) - dados(1,1);             % discrete time step
@@ -37,17 +37,23 @@ disp(['Y matrix size: ', num2str(size(Y))]);
 %% Theta calculation
 theta=inv(A'*A)*A'*Y;
 
-time_step
-
 a = (1 - theta(1))/time_step;
 b = theta(2)/time_step;
 
 disp ('System type: b/(s + a)');
 disp (['a value: ', num2str(a), ';', ' b value: ', num2str(b), ';']);
 
-% simulacao do sistema
+%% Simulacao do sistema
 sys = tf([b],[1 a]);
-ye = lsim(sys,dados(4, :), dados(1, :));
+saida_atuador = dados(3, :);
+entrada_sistema = dados(4, :);
+
+t = dados(1,:);
+ye = lsim(sys, entrada_sistema, t);
+
+close all;
 figure;
-plot(dados(1,:), ye, 'b', dados(1,:), dados(3,:), 'g');
-legend
+hold on;
+plot(t, saida_atuador, '--k', 'LineWidth', 2);
+plot(t, ye, '-g', 'LineWidth', 1);
+legend ('Saída do Atuador', 'Saída estimada')

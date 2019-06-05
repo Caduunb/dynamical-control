@@ -14,7 +14,7 @@ datasize = length(dados);
 T= dados(1,2) - dados(1,1);             % discrete time step
 disp(['Data size: ', num2str(size(dados)), ';', ' Time Step: ', num2str(T), ';']);
 
-% Matrices definition
+%% Matrices definition
 startpoint = 500;                        % Ignoring noisy initial signal
 delta = [0.968, -0.75];                  % dead zone threshold
 input =  (dados(3, startpoint:end))';    % actuator output
@@ -49,7 +49,7 @@ xlabel('time (s)');
 
 clear zoom i;
 
-% Calculate theta(1:3)
+%% Calculate theta(1:3)
 A = [output(2:length(output) - 1), output(1:length(output)-2)];
 A = [A, ddzone(1:(length(ddzone)-2))];
 Y = output(3:length(output));
