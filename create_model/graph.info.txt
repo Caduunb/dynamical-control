@@ -1,0 +1,21 @@
+# Informações sobre gráficos colhidos
+
+## arquivos: graphProcObsStep0_8s e graphProcObsSquare0_8s
+
+Entradas:			
+
+* Step: 	5V
+* Square: 	10Vpp, 50% duty cycle, 1.2s period
+
+Pólos de malha fechada: 	-10, -10, -25
+Tempo de resposta (aprox):	0.8s
+
+## arquivos: graphProcObsStep0_4s e graphProcObsSquare0_4s
+
+Entradas:			
+
+* Step: 	5V
+* Square: 	10Vpp, 50% duty cycle, 1.2s period
+
+Pólos de malha fechada: 	-20, -20, -30
+Tempo de resposta (aprox):	0.8s
