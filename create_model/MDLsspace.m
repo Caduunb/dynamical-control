@@ -18,7 +18,7 @@ disp (OLpoles);
 
 disp('Assumindo que o sistema é controlável, iremos realocar os pólos do processo aonde for conveniente.')
 %% Define K so as to place poles of the process
-polosProc = [-20 -20 -30]
+polosProc = [-6 -7 -5];
 Aext = [A, [0; 0]; -C, 0];
 Bext = [B; 0];
 Kext  = acker(Aext, Bext, polosProc); % realocar os pólos para que a planta possa responder.
@@ -34,6 +34,7 @@ disp(eig(Ac))
 polosObs = [-40 -42];
 L = (acker(A', C', polosObs))';
 
+disp('Valor de Ki:')
 disp(Ki);
 save('dadosSS.mat', 'Kext', 'Kproc', 'Ki', 'L', 'A', 'B', 'C', 'D', 'Ac', 'Aext', 'Bext');
 

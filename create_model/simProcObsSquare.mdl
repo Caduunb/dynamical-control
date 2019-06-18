@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.10"
+    ComputedModelVersion    "1.11"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -111,9 +111,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Cadu"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Jun 17 23:48:57 2019"
-  RTWModifiedTimeStamp	  482716107
-  ModelVersionFormat	  "1.%<AutoIncrement:10>"
+  LastModifiedDate	  "Tue Jun 18 00:45:49 2019"
+  RTWModifiedTimeStamp	  482716957
+  ModelVersionFormat	  "1.%<AutoIncrement:11>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1376,7 +1376,7 @@ Model {
       "67;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.05882352941176"
       "47 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop"
       "',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2019a')),'Version'"
-      ",'2019a','Position',[1 1 1280 647.333333333333],'VisibleAtModelOpen','on')"
+      ",'2019a','Position',[1 1 1280 647.333333333333])"
       NumInputPorts	      "1"
       Floating		      off
     }

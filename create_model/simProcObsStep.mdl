@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.11"
+    ComputedModelVersion    "1.12"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -46,7 +46,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [633.0, 0.0, 653.0, 727.0]
+      Location		      [641.0, 0.0, 653.0, 727.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -111,9 +111,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Cadu"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Jun 17 23:49:00 2019"
-  RTWModifiedTimeStamp	  482716092
-  ModelVersionFormat	  "1.%<AutoIncrement:11>"
+  LastModifiedDate	  "Tue Jun 18 00:45:53 2019"
+  RTWModifiedTimeStamp	  482717642
+  ModelVersionFormat	  "1.%<AutoIncrement:12>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1091,7 +1091,7 @@ Model {
   }
   System {
     Name		    "simProcObsStep"
-    Location		    [633, 0, 1286, 727]
+    Location		    [641, 0, 1294, 727]
     Open		    on
     PortBlocksUseCompactNotation off
     SetExecutionDomain	    off
@@ -1371,8 +1371,11 @@ Model {
       "],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.06666666666666"
       "67;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.05882352941176"
       "47 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop"
-      "',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2019a')),'Version'"
-      ",'2019a','Position',[1 1 1280 647.333333333333])"
+      "',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2019a','Measuremen"
+      "ts',struct('tcursors',struct('XCoordinates',[0.500000000000003 0.200275292498281],'YCoordinates',[4.985048003201"
+      "32 -0.179303108866439],'CursorChannels',[2 2],'WaveformCursors',true,'ShowHorizontal',false,'ShowVertical',true,"
+      "'LockCursorSpacing',false,'SnapToData',false,'SettingsPanelOpen',0,'MeasurementsPanelOpen',1)))),'Version','2019"
+      "a','Position',[1 1 1280 647.333333333333])"
       NumInputPorts	      "1"
       Floating		      off
     }
