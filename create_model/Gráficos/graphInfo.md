@@ -15,9 +15,23 @@ arquivos .png:
 Entradas:
 
 * Step: 	5V
-* Square: 	10Vpp, 50% duty cycle, 0.5s period
+* Square: 	10Vpp, 50% duty cycle, 0.5s/2s period
 
 Tempo de resposta (aprox):	1.4s
+
+## Pólos de malha fechada: [-8 -10 -5]
+
+arquivos .png:
+
+* graphProcObsStep1_1s
+* graphProcObsSquare1_1sP2s
+
+Entradas:
+
+* Step: 	5V
+* Square: 	10Vpp, 50% duty cycle, 2s period
+
+Tempo de resposta (aprox):	1.1s
 
 ## Pólos de malha fechada: 	-10, -10, -25
 
