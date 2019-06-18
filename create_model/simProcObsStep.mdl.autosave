@@ -46,7 +46,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [633.0, 0.0, 653.0, 727.0]
+      Location		      [634.0, 0.0, 653.0, 727.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -71,9 +71,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[828.0, 843.0]
-	ZoomFactor		[0.69226323177276861]
-	Offset			[86.034291507633611, -182.91495706106866]
+	Extents			[827.0, 843.0]
+	ZoomFactor		[0.68312614514391]
+	Offset			[85.763793789808915, -188.344232683121]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -94,7 +94,7 @@ Model {
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAACTAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAACgAD///8AAAN0AAADmAAAAAEAAAACAAAAAQAAAAL8AAAABAAAAAAAAAABAAAANgBjAG8AbABsAGEAcABzAGkAY"
+      "QBjAHQAbwByAAAAAAD/////AAACgAD///8AAANzAAADmAAAAAEAAAACAAAAAQAAAAL8AAAABAAAAAAAAAABAAAANgBjAG8AbABsAGEAcABzAGkAY"
       "gBsAGUAUABhAG4AZQBsAFQAbwBvAGwAQgBhAHIATABlAGYAdAMAAAAA/////wAAAAAAAAAAAAAAAQAAAAEAAAA4AGMAbwBsAGwAYQBwAHMAaQBiA"
       "GwAZQBQAGEAbgBlAGwAVABvAG8AbABCAGEAcgBSAGkAZwBoAHQDAAAAAP////8AAAAAAAAAAAAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
@@ -112,7 +112,7 @@ Model {
   LastModifiedBy	  "Cadu"
   ModifiedDateFormat	  "%<Auto>"
   LastModifiedDate	  "Tue Jun 18 00:45:53 2019"
-  RTWModifiedTimeStamp	  482751879
+  RTWModifiedTimeStamp	  482752949
   ModelVersionFormat	  "1.%<AutoIncrement:12>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1091,7 +1091,7 @@ Model {
   }
   System {
     Name		    "simProcObsStep"
-    Location		    [633, 0, 1286, 727]
+    Location		    [634, 0, 1287, 727]
     Open		    on
     PortBlocksUseCompactNotation off
     SetExecutionDomain	    off
@@ -1106,7 +1106,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "69"
+    ZoomFactor		    "68"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "25"
     SimulinkSubDomain	    "Simulink"

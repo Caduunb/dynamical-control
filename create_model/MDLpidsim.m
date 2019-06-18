@@ -2,7 +2,7 @@
 % author: Caio Oliveira.
 % date:   June 5, 2019.
 
-load '../IDmodelo.mat'
+load 'IDmodelo.mat'
 
 % Space State
 
