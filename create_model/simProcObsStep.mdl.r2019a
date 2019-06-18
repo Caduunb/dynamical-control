@@ -1,12 +1,12 @@
 Model {
-  Name			  "simProcObsSquare"
+  Name			  "simProcObsStep"
   Version		  9.3
   SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.11"
+    ComputedModelVersion    "1.13"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -46,7 +46,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-7.0, 0.0, 653.0, 727.0]
+      Location		      [634.0, 0.0, 653.0, 727.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -71,9 +71,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[828.0, 843.0]
-	ZoomFactor		[0.68998436342687841]
-	Offset			[83.467497614503827, -184.25560591603056]
+	Extents			[828.0, 844.0]
+	ZoomFactor		[0.6831261451439099]
+	Offset			[85.763793789808915, -188.344232683121]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -94,7 +94,7 @@ Model {
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAACTAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAACgAD///8AAAN0AAADmAAAAAEAAAACAAAAAQAAAAL8AAAABAAAAAAAAAABAAAANgBjAG8AbABsAGEAcABzAGkAY"
+      "QBjAHQAbwByAAAAAAD/////AAACgAD///8AAAN0AAADmQAAAAEAAAACAAAAAQAAAAL8AAAABAAAAAAAAAABAAAANgBjAG8AbABsAGEAcABzAGkAY"
       "gBsAGUAUABhAG4AZQBsAFQAbwBvAGwAQgBhAHIATABlAGYAdAMAAAAA/////wAAAAAAAAAAAAAAAQAAAAEAAAA4AGMAbwBsAGwAYQBwAHMAaQBiA"
       "GwAZQBQAGEAbgBlAGwAVABvAG8AbABCAGEAcgBSAGkAZwBoAHQDAAAAAP////8AAAAAAAAAAAAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
@@ -111,9 +111,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Cadu"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jun 18 00:45:49 2019"
-  RTWModifiedTimeStamp	  482751783
-  ModelVersionFormat	  "1.%<AutoIncrement:11>"
+  LastModifiedDate	  "Tue Jun 18 15:34:41 2019"
+  RTWModifiedTimeStamp	  482752949
+  ModelVersionFormat	  "1.%<AutoIncrement:13>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -169,12 +169,12 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "simProcObsSquare"
+    model_		    "simProcObsStep"
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "simProcObsSquare"
+      Cell		      "simProcObsStep"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -1008,17 +1008,6 @@ Model {
   }
   BlockParameterDefaults {
     Block {
-      BlockType		      DiscretePulseGenerator
-      PulseType		      "Sample based"
-      TimeSource	      "Use simulation time"
-      Amplitude		      "1"
-      Period		      "2"
-      PulseWidth	      "1"
-      PhaseDelay	      "0"
-      SampleTime	      "1"
-      VectorParams1D	      on
-    }
-    Block {
       BlockType		      Gain
       Gain		      "1"
       Multiplication	      "Element-wise(K.*u)"
@@ -1075,6 +1064,15 @@ Model {
       Realization	      "auto"
     }
     Block {
+      BlockType		      Step
+      Time		      "1"
+      Before		      "0"
+      After		      "1"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+      ZeroCross		      on
+    }
+    Block {
       BlockType		      Sum
       IconShape		      "rectangular"
       Inputs		      "++"
@@ -1092,8 +1090,8 @@ Model {
     }
   }
   System {
-    Name		    "simProcObsSquare"
-    Location		    [-7, 0, 646, 727]
+    Name		    "simProcObsStep"
+    Location		    [634, 0, 1287, 727]
     Open		    on
     PortBlocksUseCompactNotation off
     SetExecutionDomain	    off
@@ -1103,14 +1101,14 @@ Model {
     ScreenColor		    "white"
     PaperOrientation	    "landscape"
     PaperPositionMode	    "auto"
-    PaperType		    "usletter"
+    PaperType		    "A4"
     PaperUnits		    "inches"
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "69"
+    ZoomFactor		    "68"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "24"
+    SIDHighWatermark	    "25"
     SimulinkSubDomain	    "Simulink"
     Block {
       BlockType		      Gain
@@ -1252,15 +1250,14 @@ Model {
       }
     }
     Block {
-      BlockType		      DiscretePulseGenerator
-      Name		      "Square\nAmp: 10Vpp\nD.Cycle: 50%\nPeriod: 2s"
-      SID		      "18"
-      Ports		      [0, 1]
-      Position		      [120, 114, 150, 146]
-      ZOrder		      18
-      PulseType		      "Time based"
-      Amplitude		      "5"
-      PulseWidth	      "50"
+      BlockType		      Step
+      Name		      "Step 5V"
+      SID		      "25"
+      Position		      [110, 115, 140, 145]
+      ZOrder		      22
+      Time		      "0.2"
+      After		      "5"
+      SampleTime	      "0"
       Port {
 	PortNumber		1
 	Name			"y*"
@@ -1354,7 +1351,7 @@ Model {
     }
     Block {
       BlockType		      Scope
-      Name		      "osciloscopeSquare"
+      Name		      "osciloscopeStep"
       SID		      "20"
       Ports		      [1]
       Position		      [825, 54, 845, 76]
@@ -1541,16 +1538,16 @@ Model {
       SrcBlock		      "Mux"
       SrcPort		      1
       Points		      [43, 0; 0, 10]
-      DstBlock		      "osciloscopeSquare"
+      DstBlock		      "osciloscopeStep"
       DstPort		      1
     }
     Line {
       Name		      "y*"
-      ZOrder		      84
-      Labels		      [1, 0]
-      SrcBlock		      "Square\nAmp: 10Vpp\nD.Cycle: 50%\nPeriod: 2s"
+      ZOrder		      144
+      Labels		      [-1, 1]
+      SrcBlock		      "Step 5V"
       SrcPort		      1
-      Points		      [12, 0]
+      Points		      [22, 0]
       Branch {
 	ZOrder			116
 	DstBlock		"Sum4"

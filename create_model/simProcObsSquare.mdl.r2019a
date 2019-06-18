@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.11"
+    ComputedModelVersion    "1.12"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -46,7 +46,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-7.0, 0.0, 653.0, 727.0]
+      Location		      [-7.0, 0.0, 654.0, 727.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -71,9 +71,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[828.0, 843.0]
-	ZoomFactor		[0.68998436342687841]
-	Offset			[83.46749761450377, -184.25560591603056]
+	Extents			[829.0, 844.0]
+	ZoomFactor		[0.67750147120638915]
+	Offset			[83.093650730622585, -191.75924694250324]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -94,7 +94,7 @@ Model {
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAACTAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAACgAD///8AAAN0AAADmAAAAAEAAAACAAAAAQAAAAL8AAAABAAAAAAAAAABAAAANgBjAG8AbABsAGEAcABzAGkAY"
+      "QBjAHQAbwByAAAAAAD/////AAACgAD///8AAAN1AAADmQAAAAEAAAACAAAAAQAAAAL8AAAABAAAAAAAAAABAAAANgBjAG8AbABsAGEAcABzAGkAY"
       "gBsAGUAUABhAG4AZQBsAFQAbwBvAGwAQgBhAHIATABlAGYAdAMAAAAA/////wAAAAAAAAAAAAAAAQAAAAEAAAA4AGMAbwBsAGwAYQBwAHMAaQBiA"
       "GwAZQBQAGEAbgBlAGwAVABvAG8AbABCAGEAcgBSAGkAZwBoAHQDAAAAAP////8AAAAAAAAAAAAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
@@ -111,9 +111,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Cadu"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jun 18 00:45:49 2019"
-  RTWModifiedTimeStamp	  482716957
-  ModelVersionFormat	  "1.%<AutoIncrement:11>"
+  LastModifiedDate	  "Tue Jun 18 15:34:31 2019"
+  RTWModifiedTimeStamp	  482751783
+  ModelVersionFormat	  "1.%<AutoIncrement:12>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -170,7 +170,7 @@ Model {
     $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "simProcObsSquare"
-    overrideMode_	    [0U]
+    overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
@@ -226,7 +226,7 @@ Model {
 	  Description		  ""
 	  Components		  []
 	  StartTime		  "0.0"
-	  StopTime		  "2"
+	  StopTime		  "8"
 	  AbsTol		  "auto"
 	  AutoScaleAbsTol	  on
 	  FixedStep		  "0.002"
@@ -1093,7 +1093,7 @@ Model {
   }
   System {
     Name		    "simProcObsSquare"
-    Location		    [-7, 0, 646, 727]
+    Location		    [-7, 0, 647, 727]
     Open		    on
     PortBlocksUseCompactNotation off
     SetExecutionDomain	    off
@@ -1108,7 +1108,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "69"
+    ZoomFactor		    "68"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "24"
     SimulinkSubDomain	    "Simulink"
@@ -1253,14 +1253,13 @@ Model {
     }
     Block {
       BlockType		      DiscretePulseGenerator
-      Name		      "Square\nAmp: 10Vpp\nD.Cycle: 50%\nPeriod: 0.5s"
+      Name		      "Square\nAmp: 10Vpp\nD.Cycle: 50%\nPeriod: 2s"
       SID		      "18"
       Ports		      [0, 1]
       Position		      [120, 114, 150, 146]
       ZOrder		      18
       PulseType		      "Time based"
       Amplitude		      "5"
-      Period		      "0.5"
       PulseWidth	      "50"
       Port {
 	PortNumber		1
@@ -1549,7 +1548,7 @@ Model {
       Name		      "y*"
       ZOrder		      84
       Labels		      [1, 0]
-      SrcBlock		      "Square\nAmp: 10Vpp\nD.Cycle: 50%\nPeriod: 0.5s"
+      SrcBlock		      "Square\nAmp: 10Vpp\nD.Cycle: 50%\nPeriod: 2s"
       SrcPort		      1
       Points		      [12, 0]
       Branch {

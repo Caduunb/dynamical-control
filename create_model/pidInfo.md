@@ -1,6 +1,6 @@
 # PID data
 
-Ts:         tempo de assentamento
+Ts:         tempo de subida
 "robustez": critério do sisotool.
 
 ## Ts = 0.3s; 'robustez' = 0.8 (bom candidato)
