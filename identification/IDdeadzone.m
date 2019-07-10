@@ -2,7 +2,6 @@
 % author: Arthur R Costa, Caio E C Oliveira & Lucas E Silva
 % date:   June 2, 2019.
 % This code is supposed to identify the voltage threshold of a dead zone.
-% Obs.: not working.
 
 clear all; close all; clc;
 

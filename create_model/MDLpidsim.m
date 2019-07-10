@@ -4,7 +4,5 @@
 
 load 'IDmodelo.mat'
 
-% Space State
-
 rlocus(sys);   % root locus open loop t. function
 sisotool (sys) % open loop transfer function
